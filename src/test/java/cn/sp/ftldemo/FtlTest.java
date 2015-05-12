@@ -98,7 +98,9 @@ public class FtlTest {
 		Map root = new HashMap();
 		List ms = new ArrayList();
 		root.put("ms", ms);
-		Field[] fs = Case.class.getDeclaredFields();
+		Field[] fs = Contract.class.getDeclaredFields();
+		root.put("clazz", Contract.class.getName());
+
 		for (int i = 0; i < fs.length; i++) {
 			Field field = fs[i];
 			Map m = new HashMap();
@@ -117,7 +119,9 @@ public class FtlTest {
 		Map root = new HashMap();
 		List ms = new ArrayList();
 		root.put("ms", ms);
-		Field[] fs = TempCustomer.class.getDeclaredFields();
+		
+		Field[] fs = com.sp.net.domain.rule.redmine.TempCustomer.class.getDeclaredFields();
+		root.put("clazz", com.sp.net.domain.rule.redmine.TempCustomer.class.getName());
 		for (int i = 0; i < fs.length; i++) {
 			Field field = fs[i];
 			Map m = new HashMap();
