@@ -1,4 +1,4 @@
-package cn.sp.ftldemo;
+package com.sp.net.domain.rule.redmine;
 
 import com.sp.net.annotation.HtmlElement;
 
