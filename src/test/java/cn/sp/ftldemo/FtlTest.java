@@ -141,23 +141,6 @@ public class FtlTest {
 	public void testAndroid() throws Exception {
 		
 		
-//		@Column(position=0)
-//		private String llNo;
-//		@Column(position=1)
-//		private String reqDate;
-//		@Column(position=2)
-//		private String submitBuName;
-//		@Column(position=3)
-//		private String createDate;
-//		@Column(position=4)
-//		private String linkman;
-//		@Column(position=5)
-//		private String linkTel;
-//		
-//		@Column(position=6)
-//		private String deliveryLoc;
-//		@Column(position=7)
-//		private String remark;
 		Map root = new HashMap();
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 		String[] ids = new String[] { "llNo","reqDate","submitBuName","createDate","linkman","linkTel","deliveryLoc","remark" };
@@ -198,6 +181,31 @@ public class FtlTest {
 		}
 		root.put("list", list);
 		processTemp("androidItemRow.ftl", root);
+
+	}
+
+	
+	@Test
+	public void testOtherTitle() throws Exception {
+
+		
+		Map root = new HashMap();
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		String[] ids = new String[] { "pz","purNo","checkDate","checkman","checkinBu","checkType","checkBu","checkStandard","checkReportNo","manDateOrBatchNo","remark" };
+		String[] txts = new String[] { "103凭证","采购订单","检验日期","检验人","收货单位","检验类型","检验单位","质检标准","检验报告编号","生产日期或批次","备注"};
+		for (int i = 0; i < txts.length; i++) {
+			String txt = txts[i];
+			String id = ids[i];
+
+			Map<String, String> m = new HashMap<String, String>();
+			m.put("id", id);
+			m.put("text", txt);
+
+			list.add(m);
+
+		}
+		root.put("list", list);
+		processTemp("android.ftl", root);
 
 	}
 
