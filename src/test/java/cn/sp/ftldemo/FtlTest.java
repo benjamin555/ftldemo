@@ -200,12 +200,150 @@ public class FtlTest {
 			Map<String, String> m = new HashMap<String, String>();
 			m.put("id", id);
 			m.put("text", txt);
-
+			String style = getStyle(txt.length());
+			m.put("style",style);
 			list.add(m);
 
 		}
 		root.put("list", list);
 		processTemp("android.ftl", root);
+
+	}
+	
+	
+	@Test
+	public void testPeisongDetailTitle() throws Exception {
+		
+		
+		Map root = new HashMap();
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		String[] txts = new String[] { "项目","物料编码","描述","需求数量","单位","库存数量","库存地点","是否发货","特殊库存","批次","批次数量","寄售供应商","供应商描述","四号定位","发货数量","最后发货","自动确定批","扫描条码","预留号","项目","移动类型","预留已发货","预留未清"};
+
+		for (int i = 0; i < txts.length; i++) {
+			String txt = txts[i];
+			Map<String, String> m = new HashMap<String, String>();
+			m.put("text", txt);
+			String style = getStyle(txt.length());
+			m.put("style",style);
+			list.add(m);
+
+		}
+		root.put("list", list);
+		processTemp("android.ftl", root);
+
+	}
+
+	private String getStyle(int len) {
+		String width = "@style/GridCell%sWord";
+		width = String.format(width, len);
+		return width;
+	}
+	
+	
+	@Test
+	public void testPeisongDetailItem() throws Exception {
+		
+		
+		Map root = new HashMap();
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		String[] ids = new String[] { "itemNo","mCode","descr","qty","unit","storeQty","storeLoc","hasSend","speStore","batch","batchQty","supplier","supplierDesc","fourPos","sendQty","lastSend","keepNo","keepItemNo","moveType","keepSentQty","keepUnclearQty"};
+		String[] txts = new String[] { "项目","物料编码","描述","需求数量","单位","库存数量","库存地点","是否发货","特殊库存","批次","批次数量","寄售供应商","供应商描述","四号定位","发货数量","最后发货","自动确定批","扫描条码","预留号","项目","移动类型","预留已发货","预留未清"};
+
+		for (int i = 0; i < ids.length; i++) {
+			String id = ids[i];
+			Map<String, String> m = new HashMap<String, String>();
+			m.put("id", id);
+			String style = getStyle(txts[i].length());
+			m.put("style",style);
+			list.add(m);
+
+		}
+		root.put("list", list);
+		processTemp("androidItemRow.ftl", root);
+
+	}
+	
+	@Test
+	public void testHeadForm() throws Exception {
+		Map root = new HashMap();
+		List ms = new ArrayList();
+		root.put("list", ms);
+
+		Field[] fs = cn.sp.ftldemo.Delivery.class.getDeclaredFields();
+		for (int i = 0; i < fs.length; i++) {
+			Field field = fs[i];
+			Map m = new HashMap();
+			m.put("fieldName", field.getName());
+			ms.add(m);
+		}
+
+		processTemp("androidHeadForm.ftl", root);
+	}
+	
+	
+	
+	@Test
+	public void testQueryJava() throws Exception {
+		
+		
+		Map root = new HashMap();
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		String[] ids = new String[] { "submitDate","mPz","itemNo","chk","mCode","desc","kno","moveType","dc","specStore","flush","batch","qty","unit","supplier","supplierDesc","amount","other"};
+		String[] txts = new String[] { "过账日期","物料凭证","项目","选择","物料编码","描述","库位","移动类型","借贷","特殊库存","冲销","批次","数量","单位","供应商","供应商描述","金额","其他"};
+
+		for (int i = 0; i < ids.length; i++) {
+			String id = ids[i];
+			Map<String, String> m = new HashMap<String, String>();
+			m.put("id", id);
+			m.put("text",txts[i]);
+			list.add(m);
+		}
+		root.put("list", list);
+		processTemp("androidJava.ftl", root);
+
+	}
+	
+	@Test
+	public void testQueryTitle() throws Exception {
+		
+		
+		Map root = new HashMap();
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		String[] txts = new String[] { "过账日期","物料凭证","项目","物料编码","描述","库位","移动类型","借贷","特殊库存","冲销","批次","数量","单位","供应商","供应商描述","金额","其他信息"};
+
+		for (int i = 0; i < txts.length; i++) {
+			Map<String, String> m = new HashMap<String, String>();
+			m.put("text",txts[i]);
+			String style = getStyle(txts[i].length());
+			m.put("style",style);
+			list.add(m);
+		}
+		root.put("list", list);
+		processTemp("android.ftl", root);
+
+	}
+	
+	
+	@Test
+	public void testQueryItem() throws Exception {
+		
+		
+		Map root = new HashMap();
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		String[] ids = new String[] { "submitDate","mPz","itemNo","mCode","desc","kno","moveType","dc","specStore","flush","batch","qty","unit","supplier","supplierDesc","amount"};
+		String[] txts = new String[] { "过账日期","物料凭证","项目","物料编码","描述","库位","移动类型","借贷","特殊库存","冲销","批次","数量","单位","供应商","供应商描述","金额"};
+
+		for (int i = 0; i < ids.length; i++) {
+			String id = ids[i];
+			Map<String, String> m = new HashMap<String, String>();
+			m.put("id", id);
+			String style = getStyle(txts[i].length());
+			m.put("style",style);
+			list.add(m);
+
+		}
+		root.put("list", list);
+		processTemp("androidItemRow.ftl", root);
 
 	}
 
