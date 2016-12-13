@@ -346,6 +346,47 @@ public class FtlTest {
 		processTemp("androidItemRow.ftl", root);
 
 	}
+	
+	
+	@Test
+	public void testNodejsModel() throws Exception {
+		
+		
+		Map root = new HashMap();
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		String[] txts = new String[] { "count","created","time","device","version","system","battery","rooted","ram","disk","ver","caught","network","exception","osType"};
+
+		for (int i = 0; i < txts.length; i++) {
+			Map<String, String> m = new HashMap<String, String>();
+			m.put("text",txts[i]);
+			list.add(m);
+		}
+		root.put("list", list);
+		processTemp("nodejsModel.ftl", root);
+
+	}
+	
+	@Test
+	public void testNgjsEditForm() throws Exception {
+		
+		
+		Map root = new HashMap();
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		String model="good";
+		String[] txts = new String[] { "count","created","time","device","version","system","battery","rooted","ram","disk","ver","caught","network","exception","osType"};
+		String[] fieldDesc = new String[] { "count","created","time","device","version","system","battery","rooted","ram","disk","ver","caught","network","exception","osType"};
+		for (int i = 0; i < txts.length; i++) {
+			Map<String, String> m = new HashMap<String, String>();
+			m.put("field",txts[i]);
+			m.put("fieldDesc",fieldDesc[i]);
+			m.put("model",model);
+			list.add(m);
+		}
+		root.put("list", list);
+		processTemp("ngjsEditForm.ftl", root);
+
+	}
+
 
 
 }

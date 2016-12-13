@@ -373,12 +373,17 @@ public class AndroidTest {
 	
 	@Test
 	public void testDeliveryKeep2() throws Exception {
-		Map root = new HashMap();
-		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		
 		String[] ids = new String[] { "chk", "mCode", "mDesc", "unit", "reqQty", "sendQty", "storeLoc",
 				"autoBtn", "scanBtn","batch","batchQty","speStore","sentQty","keepUnclearQty","supplier","applyBu","acceptor","keepNo","keepItemNo","orderNetNo","moveType" };
 		String[] txts = new String[] { "选择","物料编码","描述","单位","需求数量","本次发货数量","库存地点","自动批次确定","扫描条码","批次","批次数量","特殊库存","已发货数量","未清数量","寄售供应商","领用单位","接收方","预留号","项目","工单/网络号","移动类型"};
+		process(ids, txts);
 
+	}
+
+	private void process(String[] ids, String[] txts) throws IOException, TemplateException {
+		Map root = new HashMap();
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 		for (int i = 0; i < ids.length; i++) {
 			String id = ids[i];
 			Map<String, String> m = new HashMap<String, String>();
@@ -394,7 +399,8 @@ public class AndroidTest {
 		processTemp("android.ftl", root);
 		System.out.println("----------------");
 		processTemp("androidItemRow.ftl", root);
-
+		
+		processTemp("androidJavaById.ftl", root);
 	}
 	
 	
@@ -416,6 +422,38 @@ public class AndroidTest {
 		root.put("tFields", tFields);
 		root.put("sFields", sFields);
 		processTemp("modelSetMap.ftl", root);
+	}
+	
+	
+	@Test
+	public void testSetDeliveryItemsForQuery() throws Exception {
+		String[] sFields = {"ZPSDNUM","ZPSDPOS","MATNR","MAKTX","MEINS","MENGE","ERFMG","LGORT","ZISBD","CHARG","CLABS","SOBKZ","LIFNR","NAME1","BWART","ZTHFS","ZTBDEPT","DESCRIP","ENGEPS","OBMNG","ERDAT" };
+		String[] tFields = { "no","itemNo","mCode","descr","unit","qty","qty","storeLoc","supplement","batch","batchQty","speStore","supplier","supplierDesc","moveType","sendMethod","buCode","buDesc","sentQty","unclearQty","createDate" };
+		Map root = new HashMap();
+		root.put("tFields", tFields);
+		root.put("sFields", sFields);
+		processTemp("modelSetMap.ftl", root);
+	}
+	
+	
+	@Test
+	public void testSetDeliveryItemsForSubmit() throws Exception {
+		String[] tFields = {"ZPSDNUM","ZPSDPOS","MATNR","MAKTX","MEINS","MENGE","ERFMG","LGORT","ZISBD","CHARG","CLABS","SOBKZ","LIFNR","NAME1","BWART","ZTHFS","ZTBDEPT","DESCRIP","ENGEPS","OBMNG","ERDAT" };
+		String[] sFields = { "no","itemNo","mCode","descr","unit","qty","qty","storeLoc","supplement","batch","batchQty","speStore","supplier","supplierDesc","moveType","sendMethod","buCode","buDesc","sentQty","unclearQty","createDate" };
+		Map root = new HashMap();
+		root.put("tFields", tFields);
+		root.put("sFields", sFields);
+		processTemp("modelSetMap.ftl", root);
+	}
+	
+	
+	@Test
+	public void testBatch() throws Exception {
+		
+		String[] ids = new String[] { "chk", "batch", "batchQty", "speStore", "supplier", "supplierDesc" };
+		String[] txts = new String[] { "选择","批次","批次数量","特殊库存","供应商","供应商描述"};
+		process(ids, txts);
+
 	}
 
 }
