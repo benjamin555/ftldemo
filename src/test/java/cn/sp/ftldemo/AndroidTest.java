@@ -12,6 +12,9 @@ import java.util.UUID;
 
 import org.junit.Test;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
 import freemarker.template.Template;
@@ -454,6 +457,18 @@ public class AndroidTest {
 		String[] txts = new String[] { "选择","批次","批次数量","特殊库存","供应商","供应商描述"};
 		process(ids, txts);
 
+	}
+	
+	
+	@Test
+	public void testSetValue2View() throws Exception {
+		Gson gson = new GsonBuilder().create();
+		String json = "{\"materielCode\":\"1000000000\",\"materielDescription\":\"20150607\",\"specialInventoryCode\":\"仓库名称\"}";
+		Map map = gson.fromJson(json , Map.class);
+		System.out.println(map);
+		Map root = new HashMap();
+		root.put("map", map);
+		processTemp("setVal2View.ftl", root);
 	}
 
 }
