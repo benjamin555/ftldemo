@@ -10,4 +10,9 @@ private TextView
 <#list map?keys as key> 
         ${key},
 </#list>
+
+
+<#list map?keys as key> 
+        android:id="@+id/${key}"
+</#list>
 }

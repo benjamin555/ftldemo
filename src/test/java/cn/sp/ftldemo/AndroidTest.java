@@ -463,7 +463,19 @@ public class AndroidTest {
 	@Test
 	public void testSetValue2View() throws Exception {
 		Gson gson = new GsonBuilder().create();
-		String json = "{\"materielCode\":\"1000000000\",\"materielDescription\":\"20150607\",\"specialInventoryCode\":\"仓库名称\"}";
+		String json = "{"+
+                "                    \"serial\":\"0001\",\n" +
+                "                    \"positionNumber\":\"1\",\n" +
+                "                    \"materielCode\":\"WLBM12345678901\",\n" +
+                "                    \"materielDescription\":\"物料描述物料描述物料描述物料描述物料描述物料描述物料描述1\",\n" +
+                "                    \"batch\":\"1234567891\",\n" +
+                "                    \"inventoryNumber\":\"10\",\n" +
+                "                    \"number\":\"2\",\n" +
+                "                    \"unit\":\"套\",\n" +
+                "                    \"specialInventoryFlagCode\":\"Q\",\n" +
+                "                    \"specialInventoryFlagValue\":\"项目库存1\",\n" +
+                "                    \"specialInventoryCode\":\"111\",\n" +
+                "                    \"specialInventoryDescription\":\"特殊库存描述1\"\n" + "}";
 		Map map = gson.fromJson(json , Map.class);
 		System.out.println(map);
 		Map root = new HashMap();
