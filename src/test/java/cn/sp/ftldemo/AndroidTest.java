@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,7 +49,8 @@ public class AndroidTest {
 
 		// Specify the data source where the template files come from. Here I set a
 		// plain directory for it, but non-file-system are possible too:
-		cfg.setDirectoryForTemplateLoading(new File("G:\\myproject\\ftldemo\\src\\main\\resources\\templates"));
+        URL resource = getClass().getResource("/templates");
+        cfg.setDirectoryForTemplateLoading(new File(resource.getFile()));
 
 		// Specify how templates will see the data-model. This is an advanced topic...
 		// for now just use this:
@@ -463,7 +465,19 @@ public class AndroidTest {
 	@Test
 	public void testSetValue2View() throws Exception {
 		Gson gson = new GsonBuilder().create();
-		String json = "{\"materielCode\":\"1000000000\",\"materielDescription\":\"20150607\",\"specialInventoryCode\":\"仓库名称\"}";
+		String json = "{"+
+                "                    \"serial\":\"0001\",\n" +
+                "                    \"positionNumber\":\"1\",\n" +
+                "                    \"materielCode\":\"WLBM12345678901\",\n" +
+                "                    \"materielDescription\":\"物料描述物料描述物料描述物料描述物料描述物料描述物料描述1\",\n" +
+                "                    \"batch\":\"1234567891\",\n" +
+                "                    \"inventoryNumber\":\"10\",\n" +
+                "                    \"number\":\"2\",\n" +
+                "                    \"unit\":\"套\",\n" +
+                "                    \"specialInventoryFlagCode\":\"Q\",\n" +
+                "                    \"specialInventoryFlagValue\":\"项目库存1\",\n" +
+                "                    \"specialInventoryCode\":\"111\",\n" +
+                "                    \"specialInventoryDescription\":\"特殊库存描述1\"\n" + "}";
 		Map map = gson.fromJson(json , Map.class);
 		System.out.println(map);
 		Map root = new HashMap();
