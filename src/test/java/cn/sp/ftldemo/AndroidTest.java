@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,7 +49,8 @@ public class AndroidTest {
 
 		// Specify the data source where the template files come from. Here I set a
 		// plain directory for it, but non-file-system are possible too:
-		cfg.setDirectoryForTemplateLoading(new File("G:\\myproject\\ftldemo\\src\\main\\resources\\templates"));
+        URL resource = getClass().getResource("/templates");
+        cfg.setDirectoryForTemplateLoading(new File(resource.getFile()));
 
 		// Specify how templates will see the data-model. This is an advanced topic...
 		// for now just use this:
