@@ -1,0 +1,6 @@
+qty = qty +VALUES(qty),
+qty_transfer = qty_transfer +VALUES(qty_transfer),
+qty_inspection = qty_inspection +VALUES(qty_inspection),
+qty_freeze = qty_freeze +VALUES(qty_freeze),
+qty_haste = qty_haste +VALUES(qty_haste),
+qty_temp = qty_temp +VALUES(qty_temp)
