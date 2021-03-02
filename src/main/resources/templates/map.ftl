@@ -4,9 +4,9 @@
 		<loop startRow="1" items="result01" var="h"
 			varType="${clazz}">
 			<section startRow="1" endRow="1">
-<#list ms as m>
-			<mapping row="1" col="${m.col}">h.${m.field}</mapping>
-</#list>
+<#list cols as m>
+					${m},
+				</#list>
 			</section>
 			<loopbreakcondition>
 				<rowcheck offset="0">

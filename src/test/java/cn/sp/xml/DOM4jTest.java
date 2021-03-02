@@ -23,7 +23,7 @@ public class DOM4jTest {
             Element map = (Element) maps.get(i);
             Attribute col = map.attribute("col");
             String value = col.getValue();
-            int newValue = Integer.parseInt(value)-1;
+            int newValue = Integer.parseInt(value)+1;
             col.setValue(newValue+"");
         }
 

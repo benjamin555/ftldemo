@@ -6,10 +6,11 @@ import com.sp.net.domain.rule.redmine.Contract;
 import freemarker.template.*;
 import org.junit.Test;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import com.sp.net.domain.rule.redmine.Contract;
+import freemarker.template.*;
+import org.junit.Test;
+
+import java.io.*;
 import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.ArrayList;
@@ -384,6 +385,46 @@ public class FtlTest {
 	}
 
 	/**
+	 * 文本处理
+	 * @throws Exception
+	 */
+	@Test
+	public void txtProcess() throws Exception{
+		String path = "/tmp.txt";
+		String txt = getTxt(path);
+		txt = txt.replaceAll("VALUES\\(", "b.");
+		txt = txt.replaceAll("\\),", "");
+		txt = txt.replaceAll(" ", "");
+		txt = txt.replaceAll("=", " = ");
+		txt = txt.replaceAll("\\\n", "\\\n,");
+		txt = txt.replaceAll("\\)", "");
+		System.out.println(txt);
+	}
+
+	private String getTxt(String path) {
+		URL resource = getClass().getResource(path);
+		File file = new File(resource.getFile());
+
+		return txt2String (file);
+	}
+
+
+	public static String txt2String(File file){
+		StringBuilder result = new StringBuilder();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader(file));//构造一个BufferedReader类来读取文件
+			String s = null;
+			while((s = br.readLine())!=null){//使用readLine方法，一次读一行
+				result.append("\n"+s);
+			}
+			br.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return result.toString();
+	}
+
+	/**
 	 * sap物料创建报文
 	 * @throws Exception
 	 */
@@ -409,6 +450,4 @@ public class FtlTest {
 		root.put("map", map);
 		processTemp("sapMatCreate.ftl", root);
 	}
-
-
 }
