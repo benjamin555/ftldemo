@@ -485,4 +485,17 @@ public class AndroidTest {
 		processTemp("setVal2View.ftl", root);
 	}
 
+
+	@Test
+	public void testSetPurchaseSuggest() throws Exception {
+		String[] sFields = { "id","matCode","matLongName","ftyCode","ftyName","locationCode","locationName","matTypeName","matGroupCode","matGroupName","calcStatus","sysQty","realQty","inventory","transferQty","reorderLevel","targetInventory","saftyStockDay","vlt","consumptionHistory3","consumptionForecast3","modifier"};
+		String[] tFields = { "id","matCode","matLongName","ftyCode","ftyName","locationCode","locationName","matTypeName","matGroupCode","matGroupName","calcStatus","sysQty","realQty","inventory","transferQty","reorderLevel","targetInventory","saftyStockDay","vlt","consumptionHistory3","consumptionForecast3","modifier"};
+		Map root = new HashMap();
+		root.put("tFields", tFields);
+		root.put("sFields", sFields);
+		processTemp("modelSetMap.ftl", root);
+	}
+
+
+
 }

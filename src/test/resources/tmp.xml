@@ -1,170 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map>
-    <mapping  row="2" col="32">item.personReview.reviewType</mapping>
-    <mapping  row="2" col="33">item.source</mapping>
-    <mapping  row="2" col="34">item.college</mapping>
-    <mapping  row="2" col="35">item.faculty</mapping>
-    <mapping  row="2" col="36">item.expertType</mapping>
-    <!-- 单位信息start -->
-    <mapping row="2" col="37">item.personBasicOrganizeList.country</mapping>
-    <mapping row="2" col="38">item.personBasicOrganizeList.province</mapping>
-    <mapping row="2" col="39">item.personBasicOrganizeList.city</mapping>
-    <mapping row="2" col="40">item.personBasicOrganizeList.danweiAddress</mapping>
-    <mapping row="2" col="41">item.personBasicOrganizeList.danweiName</mapping>
-    <mapping row="2" col="42">item.personBasicOrganizeList.danweiEn</mapping>
-    <mapping row="2" col="43">item.personBasicOrganizeList.twoOrganization</mapping>
-    <mapping row="2" col="44">item.personBasicOrganizeList.danweiTpye</mapping>
-    <mapping row="2" col="45">item.personBasicOrganizeList.buLocation</mapping>
-    <mapping row="2" col="46">item.personBasicOrganizeList.uscc</mapping>
-    <mapping row="2" col="47" nullAllowed="true">item.personBasicOrganizeList.startDate</mapping>
-    <mapping row="2" col="48" nullAllowed="true">item.personBasicOrganizeList.endDate</mapping>
-    <mapping row="2" col="49">item.personBasicOrganizeList.zhiwu</mapping>
-    <!-- 单位信息end -->
-    <!-- 移动电话start -->
-    <mapping row="2" col="50">item.personMobileList.no</mapping>
-    <mapping row="2" col="51">item.personMobileList.num</mapping>
-    <mapping row="2" col="52">item.personMobileList.remarks</mapping>
-    <!-- 移动电话end -->
-    <!-- 固定电话start -->
-    <mapping row="2" col="53">item.personPhoneList.no</mapping>
-    <mapping row="2" col="54">item.personPhoneList.num</mapping>
-    <mapping row="2" col="55">item.personPhoneList.remarks</mapping>
-    <!-- 固定电话end -->
-
-    <!--				<mapping  row="2" col="18">item.enterpriseCategory</mapping>-->
-    <!--				<mapping  row="2" col="19">item.approveTime</mapping>-->
-    <!--				<mapping  row="2" col="20">item.positionQuaSe</mapping>-->
-    <!--				<mapping  row="2" col="21">item.position</mapping>-->
-    <!--				<mapping  row="2" col="22">item.telPhone</mapping>-->
-    <!--				<mapping  row="2" col="23">item.workPhone</mapping>-->
-
-    <!--学习经历start  -->
-    <mapping row="2" col="56">item.personLearnJingliList.cntry</mapping>
-    <mapping row="2" col="57">item.personLearnJingliList.province</mapping>
-    <mapping row="2" col="58">item.personLearnJingliList.city</mapping>
-    <mapping row="2" col="59">item.personLearnJingliList.address</mapping>
-    <mapping row="2" col="60">item.personLearnJingliList.school</mapping>
-    <mapping row="2" col="61">item.personLearnJingliList.uscc</mapping>
-    <mapping row="2" col="62">item.personLearnJingliList.zhuanye</mapping>
-    <mapping row="2" col="63">item.personLearnJingliList.edu</mapping>
-    <mapping row="2" col="64">item.personLearnJingliList.degree</mapping>
-    <mapping row="2" col="65" nullAllowed="true">item.personLearnJingliList.startTimes</mapping>
-    <mapping row="2" col="66" nullAllowed="true">item.personLearnJingliList.endTimes</mapping>
-    <!--学习经历end  -->
-
-    <!--工作经历  -->
-    <mapping row="2" col="67">item.personWorkJingliliList.cntry</mapping>
-    <mapping row="2" col="68">item.personWorkJingliliList.province</mapping>
-    <mapping row="2" col="69">item.personWorkJingliliList.city</mapping>
-    <mapping row="2" col="70">item.personWorkJingliliList.address</mapping>
-    <mapping row="2" col="71">item.personWorkJingliliList.jigou</mapping>
-    <mapping row="2" col="72">item.personWorkJingliliList.uscc</mapping>
-    <mapping row="2" col="73">item.personWorkJingliliList.zhiwu</mapping>
-    <mapping row="2" col="74">item.personWorkJingliliList.zhicheng</mapping>
-    <mapping row="2" col="75" nullAllowed="true">item.personWorkJingliliList.beginTimes</mapping>
-    <mapping row="2" col="76" nullAllowed="true">item.personWorkJingliliList.endTimes</mapping>
+    <mapping row="2" col="71" nullAllowed="true">item.personWorkJingliliList.beginTimes</mapping>
+    <mapping row="2" col="72" nullAllowed="true">item.personWorkJingliliList.endTimes</mapping>
 
     <!--承担科研项目情况【科研人员专用】  -->
-    <mapping row="2" col="77">item.personKeyanInfoList.projectName</mapping>
-    <mapping row="2" col="78">item.personKeyanInfoList.bianhao</mapping>
-    <mapping row="2" col="79">item.personKeyanInfoList.projectType</mapping>
-    <mapping row="2" col="80">item.personKeyanInfoList.roleName</mapping>
-    <mapping row="2" col="81">item.personKeyanInfoList.jingfei</mapping>
-    <mapping row="2" col="82" nullAllowed="true">item.personKeyanInfoList.beginTimes</mapping>
-    <mapping row="2" col="83" nullAllowed="true">item.personKeyanInfoList.endTimes</mapping>
+    <mapping row="2" col="73">item.personKeyanInfoList.projectName</mapping>
+    <mapping row="2" col="74">item.personKeyanInfoList.bianhao</mapping>
+    <mapping row="2" col="75">item.personKeyanInfoList.projectType</mapping>
+    <mapping row="2" col="76">item.personKeyanInfoList.roleName</mapping>
+    <mapping row="2" col="77">item.personKeyanInfoList.jingfei</mapping>
+    <mapping row="2" col="78" nullAllowed="true">item.personKeyanInfoList.beginTimes</mapping>
+    <mapping row="2" col="79" nullAllowed="true">item.personKeyanInfoList.endTimes</mapping>
 
     <!--获得主要奖励情况  -->
-    <mapping row="2" col="84">item.personAwardInfoList.chengguoName</mapping>
-    <mapping row="2" col="85">item.personAwardInfoList.rewardTitle</mapping>
-    <mapping row="2" col="86">item.personAwardInfoList.rewardLevel</mapping>
-    <mapping row="2" col="87">item.personAwardInfoList.projectType</mapping>
-    <mapping row="2" col="88">item.personAwardInfoList.rewardYears</mapping>
-    <mapping row="2" col="89">item.personAwardInfoList.authority</mapping>
+    <mapping row="2" col="80">item.personAwardInfoList.chengguoName</mapping>
+    <mapping row="2" col="81">item.personAwardInfoList.rewardTitle</mapping>
+    <mapping row="2" col="82">item.personAwardInfoList.rewardLevel</mapping>
+    <mapping row="2" col="83">item.personAwardInfoList.projectType</mapping>
+    <mapping row="2" col="84">item.personAwardInfoList.sort</mapping>
+    <mapping row="2" col="85">item.personAwardInfoList.rewardYears</mapping>
+    <mapping row="2" col="86">item.personAwardInfoList.authority</mapping>
 
     <!--发表论文/论著情况-->
-    <mapping row="2" col="90">item.personNounInfoList.nounName</mapping>
-    <mapping row="2" col="91">item.personNounInfoList.magazineName</mapping>
-    <mapping row="2" col="92">item.personNounInfoList.authorName</mapping>
-    <mapping row="2" col="93">item.personNounInfoList.publishDay</mapping>
+    <mapping row="2" col="87">item.personNounInfoList.nounName</mapping>
+    <mapping row="2" col="88">item.personNounInfoList.magazineName</mapping>
+    <mapping row="2" col="89">item.personNounInfoList.authorName</mapping>
+    <mapping row="2" col="90">item.personNounInfoList.publishDay</mapping>
 
     <!--获得发明专利情况 -->
-    <mapping row="2" col="94">item.personPatentInfoList.patentName</mapping>
-    <mapping row="2" col="95">item.personPatentInfoList.grantingName</mapping>
-    <mapping row="2" col="96">item.personPatentInfoList.ipcNumber</mapping>
-    <mapping row="2" col="97">item.personPatentInfoList.inventor</mapping>
-    <mapping row="2" col="98" nullAllowed="true">item.personPatentInfoList.grantingTimes</mapping>
-    <mapping row="2" col="99">item.personPatentInfoList.grantingCountryOrg</mapping>
+    <mapping row="2" col="91">item.personPatentInfoList.patentName</mapping>
+    <mapping row="2" col="92">item.personPatentInfoList.grantingName</mapping>
+    <mapping row="2" col="93">item.personPatentInfoList.ipcNumber</mapping>
+    <mapping row="2" col="94">item.personPatentInfoList.inventor</mapping>
+    <mapping row="2" col="95" nullAllowed="true">item.personPatentInfoList.grantingTimes</mapping>
+    <mapping row="2" col="96">item.personPatentInfoList.grantingCountryOrg</mapping>
 
     <!--重要学术期刊或学术组织任职情况 -->
-    <mapping row="2" col="100">item.personLerningRenzhiList.learningName</mapping>
-    <mapping row="2" col="101">item.personLerningRenzhiList.positionName</mapping>
-    <mapping row="2" col="102" nullAllowed="true">item.personLerningRenzhiList.startDate</mapping>
-    <mapping row="2" col="103" nullAllowed="true">item.personLerningRenzhiList.endDate</mapping>
+    <mapping row="2" col="97">item.personLerningRenzhiList.learningName</mapping>
+    <mapping row="2" col="98">item.personLerningRenzhiList.positionName</mapping>
+    <mapping row="2" col="99" nullAllowed="true">item.personLerningRenzhiList.startDate</mapping>
+    <mapping row="2" col="100" nullAllowed="true">item.personLerningRenzhiList.endDate</mapping>
 
     <!--主要非学术机构兼职情况 -->
-    <mapping row="2" col="104">item.personParttimeInfoList.zuzhiName</mapping>
-    <mapping row="2" col="105">item.personParttimeInfoList.zhiwu</mapping>
-    <mapping row="2" col="106" nullAllowed="true">item.personParttimeInfoList.partRenqiStart</mapping>
-    <mapping row="2" col="107" nullAllowed="true">item.personParttimeInfoList.partRenqiEnd</mapping>
+    <mapping row="2" col="101">item.personParttimeInfoList.zuzhiName</mapping>
+    <mapping row="2" col="102">item.personParttimeInfoList.zhiwu</mapping>
+    <mapping row="2" col="103" nullAllowed="true">item.personParttimeInfoList.partRenqiStart</mapping>
+    <mapping row="2" col="104" nullAllowed="true">item.personParttimeInfoList.partRenqiEnd</mapping>
 
     <!--信用记录 -->
-    <mapping row="2" col="108">item.personCreditHistoryList.typeName</mapping>
-    <mapping row="2" col="109" nullAllowed="true">item.personCreditHistoryList.time</mapping>
-    <mapping row="2" col="110">item.personCreditHistoryList.shuoming</mapping>
+    <mapping row="2" col="105">item.personCreditHistoryList.typeName</mapping>
+    <mapping row="2" col="106" nullAllowed="true">item.personCreditHistoryList.time</mapping>
+    <mapping row="2" col="107">item.personCreditHistoryList.shuoming</mapping>
 
     <!-- 舆论监测 -->
-    <mapping row="2" col="111">item.personConsensusInfoList.zhuti</mapping>
-    <mapping row="2" col="112">item.personConsensusInfoList.source</mapping>
-    <mapping row="2" col="113" nullAllowed="true">item.personConsensusInfoList.time</mapping>
+    <mapping row="2" col="108">item.personConsensusInfoList.zhuti</mapping>
+    <mapping row="2" col="109">item.personConsensusInfoList.source</mapping>
+    <mapping row="2" col="110" nullAllowed="true">item.personConsensusInfoList.time</mapping>
     <!--<mapping  row="2" col="61">item.remark</mapping>-->
     <!--<mapping  row="2" col="62">item.positionalZg</mapping>-->
 
     <!-- 硕士导师start -->
-    <mapping row="2" col="114">item.personMaster.name</mapping>
-    <mapping row="2" col="115">item.personMaster.otherUsedName</mapping>
-    <mapping row="2" col="116">item.personMaster.sex</mapping>
-    <mapping row="2" col="117">item.personMaster.buName</mapping>
+    <mapping row="2" col="111">item.personMaster.name</mapping>
+    <mapping row="2" col="112">item.personMaster.otherUsedName</mapping>
+    <mapping row="2" col="113">item.personMaster.sex</mapping>
+    <mapping row="2" col="114">item.personMaster.buName</mapping>
     <!-- 硕士导师end -->
 
     <!-- 博士导师start -->
-    <mapping row="2" col="118">item.personBoss.name</mapping>
-    <mapping row="2" col="119">item.personBoss.otherUsedName</mapping>
-    <mapping row="2" col="120">item.personBoss.sex</mapping>
-    <mapping row="2" col="121">item.personBoss.buName</mapping>
+    <mapping row="2" col="115">item.personBoss.name</mapping>
+    <mapping row="2" col="116">item.personBoss.otherUsedName</mapping>
+    <mapping row="2" col="117">item.personBoss.sex</mapping>
+    <mapping row="2" col="118">item.personBoss.buName</mapping>
     <!-- 博士导师end -->
 
     <!-- 学科和领域start -->
-    <mapping row="2" col="122">item.iOne</mapping>
-    <mapping row="2" col="123">item.iTwo</mapping>
-    <mapping row="2" col="124">item.iThree</mapping>
+    <mapping row="2" col="119">item.iOne</mapping>
+    <mapping row="2" col="120">item.iTwo</mapping>
+    <mapping row="2" col="121">item.iThree</mapping>
     <!--				<mapping  row="2" col="32">item.iFour</mapping>-->
-    <mapping row="2" col="125">item.teachOne</mapping>
-    <mapping row="2" col="126">item.teachTwo</mapping>
-    <mapping row="2" col="127">item.teachThree</mapping>
+    <mapping row="2" col="122">item.teachOne</mapping>
+    <mapping row="2" col="123">item.teachTwo</mapping>
+    <mapping row="2" col="124">item.teachThree</mapping>
     <!--				<mapping  row="2" col="36">item.teachFour</mapping>-->
-    <mapping row="2" col="128">item.fundOne</mapping>
-    <mapping row="2" col="129">item.fundTwo</mapping>
-    <mapping row="2" col="130">item.fundThree</mapping>
+    <mapping row="2" col="125">item.fundOne</mapping>
+    <mapping row="2" col="126">item.fundTwo</mapping>
+    <mapping row="2" col="127">item.fundThree</mapping>
     <!--				<mapping  row="2" col="40">item.fundFour</mapping>-->
-    <mapping row="2" col="131">item.workOne</mapping>
-    <mapping row="2" col="132">item.workTwo</mapping>
-    <mapping row="2" col="133">item.workThree</mapping>
-    <mapping row="2" col="134">item.workFour</mapping>
-    <mapping row="2" col="135">item.domainOne</mapping>
-    <mapping row="2" col="136">item.domainTwo</mapping>
-    <mapping row="2" col="137">item.domainThree</mapping>
-    <mapping row="2" col="138">item.domainFour</mapping>
+    <mapping row="2" col="128">item.workOne</mapping>
+    <mapping row="2" col="129">item.workTwo</mapping>
+    <mapping row="2" col="130">item.workThree</mapping>
+    <mapping row="2" col="131">item.workFour</mapping>
+    <mapping row="2" col="132">item.domainOne</mapping>
+    <mapping row="2" col="133">item.domainTwo</mapping>
+    <mapping row="2" col="134">item.domainThree</mapping>
+    <mapping row="2" col="135">item.domainFour</mapping>
     <!-- 学科和领域end -->
 
     <!--荣誉头衔 start-->
-    <mapping row="2" col="139">item.workOne</mapping>
-    <mapping row="2" col="140">item.workTwo</mapping>
-    <mapping row="2" col="141">item.workThree</mapping>
-    <mapping row="2" col="142">item.workFour</mapping>
-    <mapping row="2" col="143">item.domainOne</mapping>
+    <mapping row="2" col="136">item.honorary1</mapping>
+    <mapping row="2" col="137">item.honorary2</mapping>
+    <mapping row="2" col="138">item.dept</mapping>
+    <mapping row="2" col="139">item.major</mapping>
+    <mapping row="2" col="140">item.approvedTime</mapping>
     <!--荣誉头衔 end-->
 
 
-    <mapping row="2" col="144">item.exId</mapping>
-    <mapping row="2" col="145">item.exZid</mapping>
+    <mapping row="2" col="141">item.exId</mapping>
+    <mapping row="2" col="142">item.exZid</mapping>
 </map>

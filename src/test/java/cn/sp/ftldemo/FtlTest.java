@@ -1,25 +1,21 @@
 package cn.sp.ftldemo;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.sp.net.domain.rule.redmine.Contract;
+import freemarker.template.*;
+import org.junit.Test;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.lang.reflect.Field;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.junit.Test;
-
-import com.sp.net.domain.rule.redmine.Contract;
-
-import freemarker.template.Configuration;
-import freemarker.template.DefaultObjectWrapper;
-import freemarker.template.Template;
-import freemarker.template.TemplateException;
-import freemarker.template.TemplateExceptionHandler;
-import freemarker.template.Version;
 
 /**
 * @author 陈嘉镇
@@ -69,8 +65,8 @@ public class FtlTest {
 
 		// Specify the data source where the template files come from. Here I set a
 		// plain directory for it, but non-file-system are possible too:
-		cfg.setDirectoryForTemplateLoading(new File("G:\\myproject\\ftldemo\\src\\main\\resources\\templates"));
-
+		URL resource = getClass().getResource("/templates");
+		cfg.setDirectoryForTemplateLoading(new File(resource.getFile()));
 		// Specify how templates will see the data-model. This is an advanced topic...
 		// for now just use this:
 		cfg.setObjectWrapper(new DefaultObjectWrapper());
@@ -387,6 +383,32 @@ public class FtlTest {
 
 	}
 
+	/**
+	 * sap物料创建报文
+	 * @throws Exception
+	 */
+	@Test
+	public void sapMatCreate() throws Exception {
+		Gson gson = new GsonBuilder().create();
+		String json = "{"+
+				"                    \"serial\":\"0001\",\n" +
+				"                    \"positionNumber\":\"1\",\n" +
+				"                    \"materielCode\":\"WLBM12345678901\",\n" +
+				"                    \"materielDescription\":\"物料描述物料描述物料描述物料描述物料描述物料描述物料描述1\",\n" +
+				"                    \"batch\":\"1234567891\",\n" +
+				"                    \"inventoryNumber\":\"10\",\n" +
+				"                    \"number\":\"2\",\n" +
+				"                    \"unit\":\"套\",\n" +
+				"                    \"specialInventoryFlagCode\":\"Q\",\n" +
+				"                    \"specialInventoryFlagValue\":\"项目库存1\",\n" +
+				"                    \"specialInventoryCode\":\"111\",\n" +
+				"                    \"specialInventoryDescription\":\"特殊库存描述1\"\n" + "}";
+		Map map = gson.fromJson(json , Map.class);
+		System.out.println(map);
+		Map root = new HashMap();
+		root.put("map", map);
+		processTemp("sapMatCreate.ftl", root);
+	}
 
 
 }
