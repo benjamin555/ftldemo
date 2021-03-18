@@ -1,11 +1,10 @@
 package cn.sp.ftldemo;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sp.net.domain.rule.redmine.Contract;
-import freemarker.template.*;
-import org.junit.Test;
-
+import cn.sp.dto.WsDto;
+import cn.sp.ftldemo.common.FileUtils;
+import cn.sp.utils.StringUtils;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.sp.net.domain.rule.redmine.Contract;
 import freemarker.template.*;
 import org.junit.Test;
@@ -430,24 +429,32 @@ public class FtlTest {
 	 */
 	@Test
 	public void sapMatCreate() throws Exception {
-		Gson gson = new GsonBuilder().create();
-		String json = "{"+
-				"                    \"serial\":\"0001\",\n" +
-				"                    \"positionNumber\":\"1\",\n" +
-				"                    \"materielCode\":\"WLBM12345678901\",\n" +
-				"                    \"materielDescription\":\"物料描述物料描述物料描述物料描述物料描述物料描述物料描述1\",\n" +
-				"                    \"batch\":\"1234567891\",\n" +
-				"                    \"inventoryNumber\":\"10\",\n" +
-				"                    \"number\":\"2\",\n" +
-				"                    \"unit\":\"套\",\n" +
-				"                    \"specialInventoryFlagCode\":\"Q\",\n" +
-				"                    \"specialInventoryFlagValue\":\"项目库存1\",\n" +
-				"                    \"specialInventoryCode\":\"111\",\n" +
-				"                    \"specialInventoryDescription\":\"特殊库存描述1\"\n" + "}";
-		Map map = gson.fromJson(json , Map.class);
-		System.out.println(map);
+
+		String path = "/sapMatCreate.csv";
+		String txt = FileUtils.getTxt(path);
+		String[] line = txt.split("\\\n");
+		Map<String,List<String>> ms = Maps.newHashMap();
+		for (int i = 1; i < line.length; i++) {
+			String s = line[i];
+			String[] ss = s.split(",");
+			String tableName = StringUtils.toCapitalizeCamelCase(ss[0]);
+			String fieldName = StringUtils.toCapitalizeCamelCase(ss[1]);
+			List<String> fs = ms.get(tableName);
+			if(fs==null){
+				fs = Lists.newArrayList();
+				ms.put(tableName,fs);
+			}
+			fs.add(fieldName);
+		}
+		List<WsDto> dtos = Lists.newArrayList();
+		for (String k : ms.keySet()) {
+			WsDto e =new WsDto();
+			e.setTableName(k);
+			e.getFieldNames().addAll(ms.get(k));
+			dtos.add(e);
+		}
 		Map root = new HashMap();
-		root.put("map", map);
+		root.put("dtos", dtos);
 		processTemp("sapMatCreate.ftl", root);
 	}
 }
